@@ -5,14 +5,17 @@ import books from '../content/mocks.json'
 <section aria-label="Recommended books for hackers">
   <div class="mx-auto max-w-screen-xl px-4 grid grid-cols-2">
     {
-      books.map(({ title, description, author, img }) => {
+      books.map(({ title, description, author, img, url }) => {
         return (
-        <div class="hover:scale-110 transition cursor-pointer m-8">
-          <img src={img} alt="Hacker books" class="w-auto h-96" />
-          <h3 class="block">{title}</h3>
+        <article class="hover:scale-110 transition cursor-pointer m-8">
+          <a href={`/book{url}`}>
+            <img src={img} alt="Hacker books" class="w-auto h-96" />
+          </a>
+          <h2 class="block">{title}</h2>
           <p class="block italic">{description}</p>
           <p class="block">{author}</p>
-        </div>
+          
+        </article>
         )
       })
     }
