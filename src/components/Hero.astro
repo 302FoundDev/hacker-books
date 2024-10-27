@@ -6,7 +6,7 @@ import books from '../content/mocks.json'
   <div class="mx-auto max-w-screen-xl px-4 justify-center flex items-center">
     <div class="grid gap-14 lg:grid-cols-2">
       {
-        books.map(({ title, description, author, img, slug }) => {
+        books.map(({ title, semiDesc, author, img, slug }) => {
   
           return (
           <article class="flex">
@@ -25,7 +25,7 @@ import books from '../content/mocks.json'
               </h2>
   
               <p class="italic max-w-sm opacity-75">
-                {description}
+                {semiDesc}
               </p>
   
               <p>
@@ -40,3 +40,4 @@ import books from '../content/mocks.json'
     </div>
   </div>
 </section>
+

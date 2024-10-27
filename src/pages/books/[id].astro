@@ -10,7 +10,7 @@ export function getStaticPaths() {
 }
 
 const { book } = Astro.props
-const { title, description, img, url } = book
+const { title, semiDesc, img, url } = book
 
 ---
 
@@ -31,7 +31,7 @@ const { title, description, img, url } = book
         {title}
       </h1>
       <p class="max-w-lg opacity-80">
-        {description}
+        {semiDesc}
       </p>
 
     </section>
