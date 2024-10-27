@@ -3,17 +3,21 @@ import Layout from "../../layouts/Layout.astro";
 import books from '../../content/mocks.json';
 
 export function getStaticPaths() {
-  return [
-    {
-      params: { id: "python-for-hackers" },
-      props: { title: "Python Programming for Hackers and Pentesters" }
-    }
-  ]
+  return books.map((book) => ({
+    params: { id: book.slug },
+    props: { book }
+  }))
 }
 
-const { title } = Astro.props
+const { book } = Astro.props
+const { title, description, img, url } = book
+
 ---
 
 <Layout title={`${title} - Hacker Books`}>
-  <h1>{title}</h1>
+  <div>
+    <div>
+      <h1>{title}</h1>
+    </div>
+  </div>
 </Layout>
