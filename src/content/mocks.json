@@ -1,9 +1,9 @@
 [
   {
-    "title": "Black Hat Python, 2nd Edition: Python Programming for Hackers and Pentesters (English Edition)",
+    "title": "Python Programming for Hackers and Pentesters",
     "description": "When it comes to creating powerful and effective hacking tools, Python is the language of choice for most security analysts. In Black Hat Python, 2nd Edition",
     "author": "Justin and Tim",
-    "img": "/pythonforhackers.webp",
+    "img": "pythonforhackers.webp",
     "url": {
       "es": "https://www.amazon.es/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441",
       "us": "https://www.amazon.com/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441"
@@ -13,17 +13,17 @@
     "title": "Penetration Testing: A Hands-On Introduction to Hacking",
     "description": "Penetration testers simulate cyber attacks to find security weaknesses in networks, operating systems, and applications.",
     "author": "Georgia Weidman",
-    "img": "/georgiaweidman.webp",
+    "img": "georgiaweidman.webp",
     "url": {
       "es": "https://www.amazon.es/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641",
       "us": "https://www.amazon.com/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641"
     }
   },
   {
-    "title": "Linux Basics for Hackers: Getting Started with Networking, Scripting, and Security in Kali",
+    "title": "Linux Basics for Hackers",
     "description": "his practical, tutorial-style book uses the Kali Linux distribution to teach Linux basics with a focus on how hackers would use them.",
     "author": "Occupy",
-    "img": "/linuxforhackers.webp",
+    "img": "linuxforhackers.webp",
     "url": {
       "es": "https://www.amazon.es/Linux-Basics-Hackers-OCCUPYTHEWEB/dp/1593278551",
       "us": "https://www.amazon.com/Linux-Basics-Hackers-OCCUPYTHEWEB/dp/1593278551"
@@ -33,7 +33,7 @@
     "title": "Hacking: The Art of Exploitation, 2nd Edition",
     "description": "Hacking is the art of creative problem solving, whether that means finding an unconventional solution to a difficult problem or exploiting holes in sloppy programming.",
     "author": "Jon Erickson",
-    "img": "/artofexploitation.webp",
+    "img": "artofexploitation.webp",
     "url": {
       "es": "https://www.amazon.es/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441",
       "us": "https://www.amazon.com/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441"
