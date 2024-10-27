@@ -15,9 +15,26 @@ const { title, description, img, url } = book
 ---
 
 <Layout title={`${title} - Hacker Books`}>
-  <div>
-    <div>
-      <h1>{title}</h1>
-    </div>
+  <div class="flex gap-6 justify-center mt-24">
+    <aside>
+      <a href="/">
+        <img 
+          class="rounded-md hover:scale-110 hover:border border-gray-700 transition max-w-64 h-auto" 
+          src={img} 
+          alt={title} />
+      </a>
+    </aside>
+
+    <section class="flex flex-col gap-4">
+
+      <h1 class="text-2xl font-semibold">
+        {title}
+      </h1>
+      <p class="max-w-lg opacity-80">
+        {description}
+      </p>
+
+    </section>
   </div>
 </Layout>
+
