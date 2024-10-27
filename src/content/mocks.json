@@ -7,7 +7,8 @@
     "url": {
       "es": "https://www.amazon.es/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441",
       "us": "https://www.amazon.com/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441"
-    }
+    },
+    "slug": "python-for-hackers"
   },
   {
     "title": "Penetration Testing: A Hands-On Introduction to Hacking",
@@ -17,17 +18,19 @@
     "url": {
       "es": "https://www.amazon.es/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641",
       "us": "https://www.amazon.com/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641"
-    }
+    },
+    "slug": "penetration-testing"
   },
   {
     "title": "Linux Basics for Hackers",
-    "description": "his practical, tutorial-style book uses the Kali Linux distribution to teach Linux basics with a focus on how hackers would use them.",
+    "description": "His practical, tutorial-style book uses the Kali Linux distribution to teach Linux basics with a focus on how hackers would use them.",
     "author": "Occupy",
     "img": "linuxforhackers.webp",
     "url": {
       "es": "https://www.amazon.es/Linux-Basics-Hackers-OCCUPYTHEWEB/dp/1593278551",
       "us": "https://www.amazon.com/Linux-Basics-Hackers-OCCUPYTHEWEB/dp/1593278551"
-    }
+    },
+    "slug": "linux-for-hackers"
   },
   {
     "title": "Hacking: The Art of Exploitation, 2nd Edition",
@@ -37,6 +40,7 @@
     "url": {
       "es": "https://www.amazon.es/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441",
       "us": "https://www.amazon.com/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441"
-    }
+    },
+    "slug": "art-of-expoitation"
   }
 ]

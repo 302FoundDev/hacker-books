@@ -2,16 +2,16 @@
 import books from '../content/mocks.json'
 ---
 
-<section aria-label="Recommended books for hackers" class="mb-6">
+<section aria-label="Recommended books for hackers" class="mb-10">
   <div class="mx-auto max-w-screen-xl px-4 justify-center flex">
     <div class="grid gap-10 md:grid-cols-2">
       {
-        books.map(({ title, description, author, img, url }) => {
+        books.map(({ title, description, author, img, slug }) => {
   
           return (
           <article class="flex">
             <a 
-              href={`/book/${url.es}`}
+              href={`/book/${slug}`}
               class="mb-2 xl:mb-0 transition hover:scale-110"
             >
               <img 
@@ -28,7 +28,8 @@ import books from '../content/mocks.json'
                 {description}
               </p>
   
-              <p class="">
+              <p>
+                <span class="opacity-75">Author: </span>
                 {author}
               </p>
             </div>
