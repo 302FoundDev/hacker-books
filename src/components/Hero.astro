@@ -4,7 +4,7 @@ import books from '../content/mocks.json'
 
 <section aria-label="Recommended books for hackers" class="mb-10">
   <div class="mx-auto max-w-screen-xl px-4 justify-center flex items-center">
-    <div class="grid gap-10 md:grid-cols-2">
+    <div class="grid gap-10 lg:grid-cols-2">
       {
         books.map(({ title, description, author, img, slug }) => {
   
@@ -16,7 +16,7 @@ import books from '../content/mocks.json'
             >
               <img 
                 src={img} alt="Hacker books" 
-                class="w-48 transition pr-[16px] rounded" />
+                class="max-w-48 transition pr-[16px] rounded-md" />
             </a>
             
             <div class="flex flex-col justify-between gap-2 my-[24px]">

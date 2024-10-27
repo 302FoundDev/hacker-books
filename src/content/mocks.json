@@ -1,7 +1,7 @@
 [
   {
     "title": "Python Programming for Hackers and Pentesters",
-    "description": "When it comes to creating powerful and effective hacking tools, Python is the language of choice for most security analysts. In Black Hat Python, 2nd Edition",
+    "description": "When it comes to creating powerful and effective hacking tools, Python is the language of choice for most security analysts.",
     "author": "Justin and Tim",
     "img": "pythonforhackers.webp",
     "url": {
@@ -34,7 +34,7 @@
   },
   {
     "title": "Hacking: The Art of Exploitation, 2nd Edition",
-    "description": "Hacking is the art of creative problem solving, whether that means finding an unconventional solution to a difficult problem or exploiting holes in sloppy programming.",
+    "description": "Hacking is the art of creative problem solving, whether that means finding an unconventional solution to a difficult problem.",
     "author": "Jon Erickson",
     "img": "artofexploitation.webp",
     "url": {
