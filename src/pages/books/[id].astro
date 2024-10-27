@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import books from '../../content/mocks.json';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { id: "python-for-hackers" },
+      props: { title: "Python Programming for Hackers and Pentesters" }
+    }
+  ]
+}
+
+const { title } = Astro.props
+---
+
+<Layout title={`${title} - Hacker Books`}>
+  <h1>{title}</h1>
+</Layout>
