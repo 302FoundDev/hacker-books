@@ -15,12 +15,13 @@ import books from '../content/mocks.json'
               class="mb-2 xl:mb-0 transition hover:scale-110"
             >
               <img
+                transition:name={`img-${slug}`}
                 src={img} alt="Hacker books" 
                 class="max-w-48 transition pr-[16px] rounded-md" />
             </a>
             
             <div class="flex flex-col justify-between gap-2 my-[24px]">
-              <h2 class="max-w-sm text-2xl font-semibold">
+              <h2 transition:name={`title-${slug}`} class="max-w-sm text-2xl font-semibold">
                 {title}
               </h2>
   
