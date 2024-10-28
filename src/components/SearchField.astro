@@ -1,0 +1,28 @@
+---
+---
+
+<section class="mx-auto mb-24">
+  <search>
+    <form>
+      <label for="search" class="opacity-75">
+        Search book
+        <input
+          id="search" 
+          name="search" 
+          type="text" 
+          placeholder="type your search..."
+          class="border border-gray-700 block rounded focus:border-violet-950 py-1 px-4 w-96"
+        />
+      </label>
+    </form>
+  </search>
+</section>
+
+<script>
+  const searchInput = document.querySelector('input[name="search"]') as HTMLInputElement
+
+  searchInput?.addEventListener('input', () => {
+    console.log(searchInput.value)
+  })
+</script>
+
