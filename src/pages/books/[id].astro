@@ -4,25 +4,29 @@ import books from '../../content/mocks.json';
 
 export function getStaticPaths() {
   return books.map((book) => ({
-    params: { id: book.slug },
-    props: { book }
-  }))
+params: { id: book.slug },
+props: { book }
+}))
 }
 
 const { book } = Astro.props
-const { title, semiDesc, img, url } = book
+const { title, semiDesc, img, url, slug } = book
+
+console.log(book.slug)
 
 ---
 
 <Layout title={`${title} - Hacker Books`}>
   <div class="flex gap-6 justify-center mt-24">
     <aside>
-      <a href="/">
-        <img 
-          class="rounded-md hover:scale-110 hover:border border-gray-700 transition max-w-64 h-auto" 
-          src={img} 
-          alt={title} />
+      <a href="/" class="hover:underline opacity-70">
+        ← Go back
       </a>
+      <img
+        class="rounded-md border border-gray-700 transition max-w-64 h-auto" 
+        src={img} 
+        alt={title}
+      />
     </aside>
 
     <section class="flex flex-col gap-4">
