@@ -2,14 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 ---
 
 <Layout title="Hacker books, just for hackers">
 	<main class="grid min-h-dvh">
-		<div class="mb-24">
-			<h1 class="text-6xl font-bold mt-8 mb-4 text-center max-w-60 m-auto">Hacker 👨🏻‍💻Books</h1>
-			<h4 class="text-center opacity-60">Some books about hacking</h4>
-		</div>
+		<Header />
 		<Hero />
 		<Footer />
 	</main>

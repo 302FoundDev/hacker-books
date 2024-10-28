@@ -4,7 +4,7 @@ import books from '../../content/mocks.json';
 
 export function getStaticPaths() {
   return books.map((book) => ({
-    params: { id: book.slug },
+    params: { book: book.slug },
     props: { book }
 }))
 }
