@@ -2,16 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import Search from '../components/SearchField.astro';
 ---
 
 <Layout title="Hacker books, just for hackers">
-	<main class="grid min-h-dvh">
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<Header />
-		<Search />
-		<Hero />
-		<Footer />
+	<main>
+		<section class="flex justify-center">
+			<Search />
+		</section>
+		<section aria-label="Recommended books for hackers" class="mb-14">
+			<Hero />
+		</section>
+		<section>
+			<Footer />
+		</section>
 	</main>
 </Layout>
+
