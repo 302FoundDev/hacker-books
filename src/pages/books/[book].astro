@@ -1,8 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import books from '../../content/mocks.json';
-import { SHOW_BUY_BUTTON } from 'astro:env/server';
-import AmazonLogo from "../../components/AmazonLogo.astro"
+import Layout from '../../layouts/Layout.astro'
+import books from '../../content/mocks.json'
+import { SHOW_BUY_BUTTON } from 'astro:env/server'
+import BuyButton from '../../components/BuyButton.astro'
+
 
 export function getStaticPaths() {
   return books.map((book) => ({
@@ -13,13 +14,6 @@ export function getStaticPaths() {
 
 const { book } = Astro.props
 const { title, semiDesc, img, url, slug } = book
-
-const SPAIN = 'ES'
-
-const country = Astro.request.headers.get('X-Vercel-IP-Country') ?? 'ES'
-
-const storeCountry = country === SPAIN ? 'spain' : 'usa'
-const countryName = country === SPAIN ? 'Spain' : 'United States'
 ---
 
 <Layout title={`${title} - Hacker Books`}>
@@ -37,18 +31,10 @@ const countryName = country === SPAIN ? 'Spain' : 'United States'
       />
 
       {
-        SHOW_BUY_BUTTON && (
-        <a
-          href={url.es}
-          title="Buy book"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-4 text-balance inline-flex gap-1 items-center bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold py-2 px-4 rounded-lg border border-yellow-500 transition duration-200 ease-in-out hover:scale-105 justify-center text-center"
-        >
-          Buy on Amazon {countryName}
-          <AmazonLogo />
-        </a>
-        )
+        SHOW_BUY_BUTTON && 
+        <BuyButton buy={url.es}>
+          Buy on Amazon
+        </BuyButton>
       }
 
     </aside>
