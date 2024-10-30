@@ -3,10 +3,9 @@ title: Penetration Testing A Hands-On Introduction to Hacking
 description: Penetration testers simulate cyber attacks to find security weaknesses in networks, operating systems, and applications.
 author: Georgia Weidman
 img: /georgiaweidman.webp
-url: {
-  es: https://www.amazon.es/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641,
+url:
+  es: https://www.amazon.es/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641
   us: https://www.amazon.com/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641
-}
 slug: penetration-testing
 ---
 

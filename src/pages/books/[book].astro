@@ -1,19 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import books from '../../content/mocks.json'
 import { SHOW_BUY_BUTTON } from 'astro:env/server'
 import BuyButton from '../../components/BuyButton.astro'
+import { getCollection, render } from 'astro:content'
 
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+
+  const books = await getCollection('books')
+
   return books.map((book) => ({
-    params: { book: book.slug },
+    params: { id: book.slug },
     props: { book }
-}))
+  }))
 }
 
 const { book } = Astro.props
-const { title, semiDesc, img, url, slug } = book
+const { slug, data } = book
+const { title, description, img, buy } = data
+
+const { Content } = await render(book)
+
+export const prerender = true
 ---
 
 <Layout title={`${title} - Hacker Books`}>
@@ -32,7 +40,7 @@ const { title, semiDesc, img, url, slug } = book
 
       {
         SHOW_BUY_BUTTON && 
-        <BuyButton buy={url.es}>
+        <BuyButton buy=>
           Buy on Amazon
         </BuyButton>
       }
@@ -44,7 +52,7 @@ const { title, semiDesc, img, url, slug } = book
         {title}
       </h1>
       <p class='max-w-lg opacity-80'>
-        {semiDesc}
+        {description}
       </p>
     </section>
   </div>
