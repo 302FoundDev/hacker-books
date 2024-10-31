@@ -3,9 +3,7 @@ title: Linux Basics for Hackers
 description: His practical, tutorial-style book uses the Kali Linux distribution to teach Linux basics with a focus on how hackers would use them.
 author: Occupy The Web
 img: /linuxforhackers.webp
-url: 
-  es: https://www.amazon.es/Linux-Basics-Hackers-OCCUPYTHEWEB/dp/1593278551
-  us: https://www.amazon.com/Linux-Basics-Hackers-OCCUPYTHEWEB/dp/1593278551
+url: https://www.amazon.es/Linux-Basics-Hackers-OCCUPYTHEWEB/dp/1593278551
 slug: linux-for-hackers
 ---
 

@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
 const { book } = Astro.props
 const { data } = book
-const { title, img, slug } = data
+const { title, img, slug, buy } = data
 
 const { Content } = await render(book)
 ---
@@ -38,7 +38,9 @@ const { Content } = await render(book)
         src={img} 
         alt={title}>
 
-      <BuyButton>Buy on Amazon</BuyButton>
+      {
+        SHOW_BUY_BUTTON && <BuyButton buy={buy}>Buy on Amazon</BuyButton>
+      }
     </aside>
 
     <section class='flex flex-col max-w-2xl'>

@@ -3,9 +3,7 @@ title: Python Programming for Hackers and Pentesters
 description: When it comes to creating powerful and effective hacking tools, Python is the language of choice for most security analysts.
 author: Justin Seitz and Tim Arnold
 img: /pythonforhackers.webp
-url:
-  es: https://www.amazon.es/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441
-  us: https://www.amazon.com/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441
+url: https://www.amazon.es/Hacking-2e-Exploitation-Jon-Erickson/dp/1593271441
 slug: python-for-hackers
 ---
 
