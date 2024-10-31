@@ -22,11 +22,11 @@ const { Content } = await render(book)
 
 <Layout title={`${title} - Hacker Books`}>
 
-  <div class='flex gap-8 justify-center mt-24'>
+  <div class='flex flex-col gap-8 justify-center mt-24 lg:flex-row'>
 
     <aside class='flex flex-col gap-2'>
       <a
-        class='text-lg opacity-70 hover:underline'
+        class='text-lg opacity-70 hover:underline sm:mx-auto'
         href='/'
       >
         ← Go back
@@ -34,7 +34,7 @@ const { Content } = await render(book)
 
       <img 
         transition:name={`img-${slug}`}
-        class='max-w-80 rounded-md'
+        class='max-w-60 mx-auto rounded-md lg:max-w-80'
         src={img} 
         alt={title}>
 
