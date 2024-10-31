@@ -15,14 +15,14 @@ export async function getStaticPaths() {
 
 const { book } = Astro.props
 const { data } = book
-const { title, img, slug, buy } = data
+const { title, img, slug, url } = data
 
 const { Content } = await render(book)
 ---
 
 <Layout title={`${title} - Hacker Books`}>
 
-  <div class='flex flex-col gap-8 justify-center mt-24 lg:flex-row'>
+  <div class='flex gap-8 justify-center mt-24'>
 
     <aside class='flex flex-col gap-2'>
       <a
@@ -39,7 +39,7 @@ const { Content } = await render(book)
         alt={title}>
 
       {
-        SHOW_BUY_BUTTON && <BuyButton buy={buy}>Buy on Amazon</BuyButton>
+        SHOW_BUY_BUTTON && <BuyButton buy={url}>Buy on Amazon</BuyButton>
       }
     </aside>
 
