@@ -1,42 +1,40 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection } from 'astro:content'
 
 const books = await getCollection('books')
-
-export const prerender = true
 ---
 
-<div class="mx-auto max-w-screen-xl px-4 justify-center flex items-center">
-  <div class="grid gap-14 lg:grid-cols-2">
+<div class='mx-auto max-w-screen-xl px-4 justify-center flex items-center'>
+  <div class='grid gap-14 lg:grid-cols-2'>
     {
       books.map(book => {
         const { slug, data } = book
         const { title, img, description, author } = data
 
         return (
-          <article class="flex">
+          <article class='flex'>
             <a 
               href={`/books/${slug}`}
-              class="mb-2 xl:mb-0 transition hover:scale-110"
+              class='mb-2 xl:mb-0 transition hover:scale-110'
             >
               <img
                 transition:name={`img-${slug}`}
                 src={img}
-                alt="Hacker books" 
-                class="max-w-48 transition pr-[16px] rounded-md" />
+                alt='Hacker books' 
+                class='max-w-48 transition pr-[16px] rounded-md' />
             </a>
             
-            <div class="flex flex-col justify-between gap-2 my-[24px]">
-              <h2 transition:name={`title-${slug}`} class="max-w-sm text-2xl font-semibold">
+            <div class='flex flex-col justify-between gap-2 my-[24px]'>
+              <h2 transition:name={`title-${slug}`} class='max-w-sm text-2xl font-semibold'>
                 {title}
               </h2>
 
-              <p class="italic max-w-sm opacity-75">
+              <p class='italic max-w-sm opacity-75'>
                 {description}
               </p>
 
               <p>
-                <span class="opacity-75">Author: </span>
+                <span class='opacity-75'>Author: </span>
                 {author}
               </p>
             </div>
