@@ -2,31 +2,50 @@
 import Layout from '../../layouts/Layout.astro'
 import { SHOW_BUY_BUTTON } from 'astro:env/server'
 import BuyButton from '../../components/BuyButton.astro'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 
-export const getStaticPaths = (async () => {
-  const books = await getCollection('books')
+export async function getStaticPaths() {
+  const booksCollection = await getCollection('books')
 
-  return books.map(book => {
-    params: { id: book.slug }
-    props: { title: book.slug }
-  })
-})
+  return booksCollection.map((book) => ({
+    params: { book: book.slug },
+    props:  { book }
+  }))
+}
 
-const { title } = Astro.props
+const { book } = Astro.props
+const { data } = book
+const { title, img, slug } = data
+
+const { Content } = await render(book)
 ---
 
 <Layout title={`${title} - Hacker Books`}>
 
   <div class='flex gap-6 justify-center mt-24'>
 
-    <aside>
-      <a href=""></a>
-      <img src="" alt="">
+    <aside class='flex flex-col gap-2'>
+      <a
+        class='text-lg opacity-70 hover:underline'
+        href='/'
+      >
+        ← Go back
+      </a>
+
+      <img 
+        transition:name={`img-${slug}`}
+        class='w-80'
+        src={img} 
+        alt={title}>
+
       <BuyButton>Buy on Amazon</BuyButton>
     </aside>
-    <section>
 
+    <section class='flex flex-col max-w-2xl'>
+      <h2 transition:name={`title-${slug}`} class='text-3xl font-semibold mb-4'>{title}</h2>
+      <p>
+        <Content />
+      </p>
     </section>
 
   </div>
