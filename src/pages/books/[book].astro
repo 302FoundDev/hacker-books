@@ -22,7 +22,7 @@ const { Content } = await render(book)
 
 <Layout title={`${title} - Hacker Books`}>
 
-  <div class='flex gap-6 justify-center mt-24'>
+  <div class='flex gap-8 justify-center mt-24'>
 
     <aside class='flex flex-col gap-2'>
       <a
@@ -34,7 +34,7 @@ const { Content } = await render(book)
 
       <img 
         transition:name={`img-${slug}`}
-        class='w-80'
+        class='max-w-80 rounded-md'
         src={img} 
         alt={title}>
 
@@ -42,10 +42,10 @@ const { Content } = await render(book)
     </aside>
 
     <section class='flex flex-col max-w-2xl'>
-      <h2 transition:name={`title-${slug}`} class='text-3xl font-semibold mb-4'>{title}</h2>
-      <p>
+      <h2 transition:name={`title-${slug}`} class='text-3xl font-semibold mb-4 mt-6'>{title}</h2>
+      <div class='prose prose-invert'>
         <Content />
-      </p>
+      </div>
     </section>
 
   </div>
