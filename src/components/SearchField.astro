@@ -1,5 +1,5 @@
 ---
-const { books } = Astro.props
+
 ---
 
 <search class='mb-24 mt-14'>
@@ -14,21 +14,6 @@ const { books } = Astro.props
       />
     </label>
   </form>
-
-  <div id='results' class='mt-8'>
-    <ul>
-      {
-        books.map((book) => {
-          const { slug, data } = book
-          const { title, description, img, author } = data
-
-          return (
-            <li class=''>{title}</li>
-          )
-        })
-      }
-    </ul>
-  </div>
 </search>
 
 <script>
