@@ -5,7 +5,7 @@ export interface Props {
 ---
 
 <search class='mb-24 mt-14'>
-  <form>
+  <form class='flex gap-2'>
     <label for='search' class='opacity-75'>
       <input
         id='search'
@@ -16,5 +16,9 @@ export interface Props {
         oninput='onInput'
       />
     </label>
+    <button
+      class='border rounded-md py-1 px-4 border-gray-700 text-sm transition hover:bg-white hover:text-black'
+      type='submit'>Search</button
+    >
   </form>
 </search>
