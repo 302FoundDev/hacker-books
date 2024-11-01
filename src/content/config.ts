@@ -15,3 +15,4 @@ const books = defineCollection({
 })
 
 export const collection = { books }
+

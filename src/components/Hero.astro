@@ -1,20 +1,20 @@
 ---
-import Search from "./Search.astro";
-import { getCollection } from "astro:content";
+import Search from "./Search.astro"
+import { getCollection } from "astro:content"
 
-const books = await getCollection("books");
+const books = await getCollection("books")
 
-let searchTerm = "";
+let searchTerm = ""
 
 const filteredBooks = () => {
   return books.filter((book: { data: { title: string } }) =>
     book.data.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-};
+  )
+}
 
 const handleInputChange = (event: { target: { value: string } }) => {
-  searchTerm = event.target.value;
-};
+  searchTerm = event.target.value
+}
 ---
 
 <section
@@ -27,13 +27,13 @@ const handleInputChange = (event: { target: { value: string } }) => {
       filteredBooks().length > 0 ? (
         filteredBooks().map(
           (book: {
-            slug: any;
-            data: { img: any; title: any; description: any; author: any };
+            slug: any
+            data: { img: any, title: any, description: any, author: any }
           }) => {
             const {
               slug,
               data: { img, title, description, author },
-            } = book;
+            } = book
 
             return (
               <div class='flex gap-4'>
@@ -57,7 +57,7 @@ const handleInputChange = (event: { target: { value: string } }) => {
                   </p>
                 </div>
               </div>
-            );
+            )
           }
         )
       ) : (
