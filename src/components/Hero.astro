@@ -1,16 +1,18 @@
 ---
-import SearchField from "./SearchField.astro";
+import Search from "./Search.astro";
 import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
 
 let searchTerm = "";
 
-const filterBooks = books.filter((book) =>
-  book.data.title.toLowerCase().includes(searchTerm.toLowerCase())
-);
+const filteredBooks = () => {
+  return books.filter((book: { data: { title: string } }) =>
+    book.data.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+};
 
-const handleInputChange = (event) => {
+const handleInputChange = (event: { target: { value: string } }) => {
   searchTerm = event.target.value;
 };
 ---
@@ -18,41 +20,46 @@ const handleInputChange = (event) => {
 <section
   class='mx-auto max-w-screen-xl px-4 justify-center flex flex-col items-center'>
   <div>
-    <SearchField onInput={handleInputChange} />
+    <Search onInput={handleInputChange} />
   </div>
   <article class='grid grid-cols-2 gap-8'>
     {
-      filterBooks.length > 0 ? (
-        filterBooks.map((book) => {
-          const {
-            slug,
-            data: { img, title, description, author },
-          } = book;
+      filteredBooks().length > 0 ? (
+        filteredBooks().map(
+          (book: {
+            slug: any;
+            data: { img: any; title: any; description: any; author: any };
+          }) => {
+            const {
+              slug,
+              data: { img, title, description, author },
+            } = book;
 
-          return (
-            <div class='flex gap-4'>
-              <div>
-                <a href={`/books/${slug}`}>
-                  <img
-                    transition:name={`img-${slug}`}
-                    class='rounded-md transition hover:scale-110'
-                    src={img}
-                    alt={title}
-                  />
-                </a>
+            return (
+              <div class='flex gap-4'>
+                <div>
+                  <a href={`/books/${slug}`}>
+                    <img
+                      transition:name={`img-${slug}`}
+                      class='rounded-md transition hover:scale-110'
+                      src={img}
+                      alt={title}
+                    />
+                  </a>
+                </div>
+                <div class='flex flex-col justify-center gap-4'>
+                  <h4 class='text-2xl font-bold'>{title}</h4>
+                  <p class='prose prose-invert opacity-75 lg:prose-md'>
+                    {description}
+                  </p>
+                  <p>
+                    <span class='opacity-70'>Author</span> - {author}
+                  </p>
+                </div>
               </div>
-              <div class='flex flex-col justify-center gap-4'>
-                <h4 class='text-2xl font-bold'>{title}</h4>
-                <p class='prose prose-invert opacity-75 lg:prose-md'>
-                  {description}
-                </p>
-                <p>
-                  <span class='opacity-70'>Author</span> - {author}
-                </p>
-              </div>
-            </div>
-          );
-        })
+            );
+          }
+        )
       ) : (
         <div>
           <p>No results were found.</p>
