@@ -1,26 +1,39 @@
 ---
+const { books } = Astro.props
 ---
 
-<search class="mb-24 mt-14">
+<search class='mb-24 mt-14'>
   <form>
-    <label for="search" class="opacity-75">
-      Search book
+    <label for='search' class='opacity-75'>
       <input
-        id="search" 
-        name="search" 
-        type="text" 
-        placeholder="type your search..."
-        class="border border-gray-700 block rounded py-1 px-4 w-96"
+        id='search' 
+        name='search' 
+        type='text' 
+        placeholder='Type your search...'
+        class='border border-gray-700 block rounded py-1 px-4 w-96'
       />
     </label>
   </form>
+
+  <div id='results' class='mt-8'>
+    <ul>
+      {
+        books.map((book) => {
+          const { slug, data } = book
+          const { title, description, img, author } = data
+
+          return (
+            <li class=''>{title}</li>
+          )
+        })
+      }
+    </ul>
+  </div>
 </search>
 
 <script>
-  const searchInput = document.querySelector('input[name="search"]') as HTMLInputElement
-
-  searchInput?.addEventListener('input', () => {
-    alert(searchInput.value)
-  })
+  const searchInput = document.getElementById('search')
+  
+  searchInput
 </script>
 

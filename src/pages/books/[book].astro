@@ -18,6 +18,8 @@ const { data } = book
 const { title, img, slug, url } = data
 
 const { Content } = await render(book)
+
+export const prerender = true
 ---
 
 <Layout title={`${title} - Hacker Books`}>

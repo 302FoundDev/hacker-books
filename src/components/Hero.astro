@@ -1,10 +1,14 @@
 ---
+import SearchField from './SearchField.astro'
 import { getCollection } from 'astro:content'
 
 const books = await getCollection('books')
 ---
 
-<div class='mx-auto max-w-screen-xl px-4 justify-center flex items-center'>
+<div class='mx-auto max-w-screen-xl px-4 justify-center flex flex-col items-center'>
+  <section class='flex justify-center'>
+    <SearchField client:load books={books} />
+  </section>
   <div class='grid gap-14 lg:grid-cols-2'>
     {
       books.map(book => {
