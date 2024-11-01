@@ -1,24 +1,20 @@
 ---
-
+export interface Props {
+  onInput: (e: Event) => void;
+}
 ---
 
 <search class='mb-24 mt-14'>
   <form>
     <label for='search' class='opacity-75'>
       <input
-        id='search' 
-        name='search' 
-        type='text' 
+        id='search'
+        name='search'
+        type='text'
         placeholder='Type your search...'
         class='border border-gray-700 block rounded py-1 px-4 w-96'
+        oninput='onInput'
       />
     </label>
   </form>
 </search>
-
-<script>
-  const searchInput = document.getElementById('search')
-  
-  searchInput
-</script>
-

@@ -3,49 +3,56 @@ import SearchField from "./SearchField.astro";
 import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
+
+let searchTerm = "";
+
+const filterBooks = books.filter((book) =>
+  book.data.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
+const handleInputChange = (event) => {
+  searchTerm = event.target.value;
+};
 ---
 
-<div
+<section
   class='mx-auto max-w-screen-xl px-4 justify-center flex flex-col items-center'>
-  <section>
-    <SearchField />
-  </section>
-  <div class='flex flex-col gap-14'>
-    {
-      books.map((book) => {
-        const { slug, data } = book;
-        const { title, img, description, author } = data;
-
-        return (
-          <article class='flex sm:flex-col-reverse lg:flex-row'>
-            <a
-              href={`/books/${slug}`}
-              class='mb-2 p-0 lg:pr-[16px] transition hover:scale-110'>
-              <img
-                transition:name={`img-${slug}`}
-                src={img}
-                alt='Hacker books'
-                class='transition rounded-md lg:max-w-60'
-              />
-            </a>
-
-            <div class='flex flex-col justify-center gap-2 my-[24px] lg:justify-between'>
-              <h2
-                transition:name={`title-${slug}`}
-                class='max-w-sm text-2xl font-semibold'>
-                {title}
-              </h2>
-
-              <p class='italic max-w-sm opacity-75'>{description}</p>
-
-              <p class='hidden lg:flex'>
-                <span class='opacity-75'>Author: </span>
-                {author}
-              </p>
-            </div>
-          </article>
-        );
-      })
-    }
+  <div>
+    <SearchField onInput={handleInputChange} />
   </div>
-</div>
+  <article class='grid grid-cols-2 gap-8'>
+    {
+      filterBooks.length > 0 ? (
+        filterBooks.map((book) => {
+          const {
+            slug,
+            data: { img, title, description, author },
+          } = book;
+
+          return (
+            <div class='flex gap-4'>
+              <div>
+                <a class='hover:scale-105' href={`/books/${slug}`}>
+                  <img class='rounded-md' src={img} alt={title} />
+                </a>
+              </div>
+              <div class='flex flex-col justify-center gap-4'>
+                <h4 class='text-2xl font-bold'>{title}</h4>
+                <p class='prose prose-invert opacity-75 lg:prose-md'>
+                  {description}
+                </p>
+                <p>
+                  <span class='opacity-70'>Author</span> - {author}
+                </p>
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <div>
+          <p>No results were found.</p>
+        </div>
+      )
+    }
+  </article>
+</section>
