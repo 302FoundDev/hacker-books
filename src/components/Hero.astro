@@ -6,10 +6,10 @@ const books = await getCollection('books')
 ---
 
 <div class='mx-auto max-w-screen-xl px-4 justify-center flex flex-col items-center'>
-  <section class='flex justify-center'>
+  <section>
     <SearchField />
   </section>
-  <div class='grid gap-14 lg:grid-cols-2'>
+  <div class='grid gap-14 lg:grid-cols-2 mx-auto'>
     {
       books.map((book) => {
         const { slug, data } = book
