@@ -3,7 +3,7 @@ const links = [
   {
     "github": "https://github.com/302FoundDev",
     "twitter": "https://x.com/302founddev",
-    "midu": "Gracias a @midudev por toda la ense;anza",
+    "midu": "Thanks to @midudev for the support",
     "midusocial": "https://x.com/midudev",
     "rel": "noopener noreferer",
     "target": "_blank"
@@ -12,24 +12,24 @@ const links = [
 ---
 
 <section>
-  <div class="flex justify-between px-4 max-w-screen-xl mx-auto py-8">
+  <div class="flex justify-between max-w-screen-xl px-4 py-8 mx-auto">
     {
       links.map(({ github, twitter, midu, midusocial, rel, target }) => {
 
         return (
           <div>
-            <span>Created by <a href={twitter} rel={rel} target={target} class="hover:underline hover:text-red-300 transition">@302FoundDev</a></span>
+            <span>Created by <a href={twitter} rel={rel} target={target} class="transition hover:underline hover:text-red-300">@302FoundDev</a></span>
           </div>
 
           <div>
             <span>
-             <a href={midusocial} rel={rel} target={target} class="hover:underline hover:text-red-300 transition">{midu}</a>
+             <a href={midusocial} rel={rel} target={target} class="transition hover:underline hover:text-red-300">{midu}</a>
             </span>
           </div>
 
           <div>
             <span>
-              <a href={github} rel={rel} target={target} class="hover:underline hover:text-red-300 transition">Github</a>
+              <a href={github} rel={rel} target={target} class="transition hover:underline hover:text-red-300">Github</a>
             </span>
           </div>
         )
